@@ -22,9 +22,12 @@ import pyaudio
 import wave
 from collections import Counter
 
+
 def talk(text):
     from gtts import gTTS
     import os
+  
+    
     mytext = text
     language = 'en'
     myobj = gTTS(text=mytext, lang=language, slow=False)
@@ -92,6 +95,7 @@ def take_alter_command():
 
         if len(response.results) == 0:
             return voicein()
+            print("* a")
         else:
             for result in response.results:
                 # The first alternative is the most likely one for this portion.
